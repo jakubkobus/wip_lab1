@@ -1,0 +1,71 @@
+V "GNAT Lib v12"
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_FLOATING_POINT
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U lib%b			lib.adb			514bfbc8 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+
+U lib%s			lib.ads			d14e7c1f EE NE OO PK
+
+D ada.ads		20230508121439 76789da1 ada%s
+D a-numeri.ads		20230508121439 84bea7a3 ada.numerics%s
+D a-nuelfu.ads		20230508121439 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20230508121439 e6ec3af5 ada.numerics.generic_elementary_functions%s
+D a-unccon.ads		20230508121439 0e9b276f ada.unchecked_conversion%s
+D lib.ads		20241114003217 d14e7c1f lib%s
+D lib.adb		20241114002914 83edbacb lib%b
+D system.ads		20230508121439 a2da961d system%s
+D s-exctab.ads		20230508121439 91bef6ef system.exception_table%s
+D s-stalib.ads		20230508121439 1c9580f6 system.standard_library%s
+G a e
+G c Z s b [countprimes lib 4 12 none]
+G c Z s b [nthprime lib 5 12 none]
+G c Z s b [isprime lib 6 12 none]
+G c Z s b [isqrt lib 10 12 none]
+G c Z s b [computesieve lib 11 13 none]
+G c Z s s [sievearrayIP lib 2 8 none]
+X 1 ada.ads
+16K9*Ada 20e8 7|1r6 1r45
+X 2 a-numeri.ads
+16K13*Numerics 35e17 7|1r10 1r49
+X 3 a-nuelfu.ads
+18K22*Elementary_Functions[4|39] 7|1w19 1r58
+X 4 a-ngelfu.ads
+52V13*Sqrt{float} 7|6s28[3|18]
+X 6 lib.ads
+1K9*Lib 10E12 12l5 12e8 7|3b14 97l5 97t8
+2A8*SieveArray(boolean)<integer> 11r41 7|9r41 28r13
+4V12*countPrimes{natural} 4>24 7|27b12 40l7 40t18
+4i24 n{positive} 7|27b24 28r29 31r25 33r19
+5V12*nthPrime{natural} 5>21 7|42b12 72l7 72t15
+5i21 n{natural} 7|42b21 43r25 49r8 53r22 71r19
+6V12*isPrime{boolean} 6>20 7|74b12 96l7 96t14
+6i20 n{integer} 7|74b20 77r8 79r11 79r20 79r29 81r11 81r26 81r41 85r21 88r10
+. 88r25
+10V12 iSqrt{natural} 10>18 7|4b12 7l7 7t12 54s12 85s15
+10i18 n{natural} 7|4b18 6r39
+11U13 computeSieve 11=26 11>53 7|9b13 25l7 25t19 31s5
+11a26 sieve{2A8} 7|9b26 13m7 17r10 20m11
+11i53 n{positive} 7|9b53 12r19 16r19 19r20
+X 7 lib.adb
+10i5 j{positive} 18m9 19r15 20r17 21m11 21r16
+12i9 i{integer} 13r13
+16i9 i{integer} 17r16 18r14 18r18 21r20
+28a5 sieve{6|2A8} 31m18 31r18 34r10
+29i5 numberOfPrimes{natural} 35m9 35r27 39r12
+33i9 i{integer} 34r16
+43a5 primes(natural) 51m5 58r25 59r26 64m9 71r12
+44i5 candidate{natural} 54r18 59r12 64r29 68m7 68r20
+45i5 iterator{natural} 53r11 58r48 64r16 65m9 65r21
+46i5 i{natural} 56m7 58r32 58r44 59r33 60m14 60r19
+46i8 s{natural} 54m7 58r38
+47b5 isPrime{boolean} 55m7 58r13 59m45 63r10
+75i5 isqrtn{integer} 85m5 87r16
+75i13 i{integer} 86m5 87r11 88r16 88r32 92m7 92r12
+

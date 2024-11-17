@@ -1,0 +1,95 @@
+V "GNAT Lib v12"
+M P W=b
+P SS ZX
+
+RN
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+
+U zad2%b		zad2.adb		4bba982d NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W lib%s			lib.adb			lib.ali
+Z system.img_int%s	s-imgint.ads		s-imgint.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.val_int%s	s-valint.ads		s-valint.ali
+
+D ada.ads		20230508121439 76789da1 ada%s
+D a-charac.ads		20230508121439 2d3ec45b ada.characters%s
+D a-chlat1.ads		20230508121439 e0d72e76 ada.characters.latin_1%s
+D a-comlin.ads		20230508121439 4aa66568 ada.command_line%s
+D a-except.ads		20230508121439 2a7d8d70 ada.exceptions%s
+D a-ioexce.ads		20230508121439 40018c65 ada.io_exceptions%s
+D a-stream.ads		20230508121439 119b8fb3 ada.streams%s
+D a-string.ads		20230508121439 90ac6797 ada.strings%s
+D a-strfix.ads		20230508121439 a4e33eef ada.strings.fixed%s
+D a-strmap.ads		20230508121439 233229cd ada.strings.maps%s
+D a-strsea.ads		20230508121439 6f718bb4 ada.strings.search%s
+D a-sttebu.ads		20230508121439 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20230508121439 33c54060 ada.strings.utf_encoding%s
+D a-tags.ads		20230508121439 9eaa38c6 ada.tags%s
+D a-textio.ads		20230508121439 deada98a ada.text_io%s
+D a-unccon.ads		20230508121439 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230508121439 edec285f interfaces%s
+D i-cstrea.ads		20230508121439 e53d8b8e interfaces.c_streams%s
+D lib.ads		20241114003217 d14e7c1f lib%s
+D system.ads		20230508121439 a2da961d system%s
+D s-casuti.ads		20230508121439 cf13d755 system.case_util%s
+D s-crtl.ads		20230508121439 8a0692f8 system.crtl%s
+D s-exctab.ads		20230508121439 91bef6ef system.exception_table%s
+D s-ficobl.ads		20230508121439 dc5161d4 system.file_control_block%s
+D s-imagei.ads		20230508121439 0d3f86a7 system.image_i%s
+D s-imgint.ads		20230508121439 bdb6f5ec system.img_int%s
+D s-parame.ads		20230508121439 d494a4a6 system.parameters%s
+D s-putima.ads		20230508121439 4e095881 system.put_images%s
+D s-secsta.ads		20230508121439 62cd9202 system.secondary_stack%s
+D s-soflin.ads		20230508121439 df77073e system.soft_links%s
+D s-stache.ads		20230508121439 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20230508121439 1c9580f6 system.standard_library%s
+D s-stoele.ads		20230508121439 6d8e1ff4 system.storage_elements%s
+D s-stoele.adb		20230508121439 8f5a9db6 system.storage_elements%b
+D s-traent.ads		20230508121439 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20230508121439 fa2a7f59 system.unsigned_types%s
+D s-valint.ads		20230508121439 85ddbf9c system.val_int%s
+D s-valuns.ads		20230508121439 e8a1f424 system.val_uns%s
+D s-valuti.ads		20230508121439 4d0d41f3 system.val_util%s
+D s-valuei.ads		20230508121439 75953b98 system.value_i%s
+D s-valueu.ads		20230508121439 eb2f4477 system.value_u%s
+D s-wchcon.ads		20230508121439 d9032363 system.wch_con%s
+D unchconv.ads		20230508121439 ca2f9e18 unchecked_conversion%s
+D zad2.adb		20241114004104 aa1c163f zad2%b
+G a e
+G c Z b b [zad2 standard 7 11 none]
+G r c none [zad2 standard 7 11 none] [countprimes lib 4 12 none]
+G r c none [zad2 standard 7 11 none] [nthprime lib 5 12 none]
+G r c none [zad2 standard 7 11 none] [isprime lib 6 12 none]
+X 1 ada.ads
+16K9*Ada 20e8 44|1r6 1r29 2r6 2r29 3r6 3r29 10r31
+X 4 a-comlin.ads
+36K13*Command_Line 144e21 44|2w10 2r33
+52V13*Argument{string} 44|16s22 18s6 20s9 22s9
+X 8 a-string.ads
+16K13*Strings 35e16 44|3r10 3r33 10r35
+33n24*Left{33E9} 44|10r43
+X 9 a-strfix.ads
+49K21*Fixed 1397e22 44|3w18 3r41
+1130V13*Trim{string} 44|10s12
+X 15 a-textio.ads
+58K13*Text_IO 727e16 44|1w10 1r33
+507U14*Put_Line 44|19s5 21s5 24s7 26s7 29s5
+X 19 lib.ads
+1K9*Lib 12e8 44|5w6 19r18 21r18 23r8
+4V12*countPrimes{natural} 44|19s22
+5V12*nthPrime{natural} 44|21s22
+6V12*isPrime{boolean} 44|23s12
+X 44 zad2.adb
+7U11*Zad2 7b11 33l5 33t9
+8V12 img{string} 8b12 8>16 11l7 11t10 19s14 21s14
+8i16 number{natural} 10r17
+14i3 n{natural} 16m3 19r34 21r31 23r28
+

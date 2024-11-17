@@ -1,0 +1,57 @@
+V "GNAT Lib v12"
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U lib%b			lib.adb			0be9879b NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+
+U lib%s			lib.ads			474f62dc EE NE OO PK
+
+D ada.ads		20230508121439 76789da1 ada%s
+D a-numeri.ads		20230508121439 84bea7a3 ada.numerics%s
+D a-nuelfu.ads		20230508121439 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20230508121439 e6ec3af5 ada.numerics.generic_elementary_functions%s
+D a-unccon.ads		20230508121439 0e9b276f ada.unchecked_conversion%s
+D lib.ads		20241114010033 474f62dc lib%s
+D lib.adb		20241114013825 4f4ed85b lib%b
+D system.ads		20230508121439 a2da961d system%s
+D s-exctab.ads		20230508121439 91bef6ef system.exception_table%s
+D s-stalib.ads		20230508121439 1c9580f6 system.standard_library%s
+G a e
+G c Z s b [totient lib 4 12 none]
+G c Z s b [log2i lib 8 12 none]
+G c Z s b [primefactors lib 9 13 none]
+G c Z s s [factorsarrayIP lib 2 8 none]
+X 1 ada.ads
+16K9*Ada 20e8 7|1r6 1r45
+X 2 a-numeri.ads
+16K13*Numerics 35e17 7|1r10 1r49
+X 3 a-nuelfu.ads
+18K22*Elementary_Functions[4|39] 7|1w19 1r58
+X 4 a-ngelfu.ads
+75V13*Log{float} 7|5s29[3|18] 7s20[3|18]
+X 6 lib.ads
+1K9*Lib 8E12 10l5 10e8 7|3b14 57l5 57t8
+2A8*FactorsArray(natural)<integer> 9r43 7|10r43 40r15
+4V12*totient{natural} 4>20 7|39b12 55l7 55t14
+4i20 n{natural} 7|39b20 40r39 41r23 42r25
+8V12 Log2i{natural} 8>18 7|4b12 8l7 8t12 40s33
+8i18 n{natural} 7|4b18 7r30
+9U13 primeFactors 9=26 9=57 7|10b13 37l7 37t19 44s5
+9a26 factors{2A8} 7|10b26 17m7 24m9 29m11
+9i57 size{natural} 7|10b57 12r20 14m5 17r15 19m7 19r15 24r17 26m9 26r17 29r19
+. 31m11 31r19
+X 7 lib.adb
+5f5 Ln2{float} 7r36
+11i5 t{natural} 23r10 23r14 28r21 29r28 30r20 34m9 34r14
+12i5 n{natural} 16r11 18m7 18r12 22r11 23r18 24r26 25m9 28r15 30m11 30r16
+40a5 factors{6|2A8} 44m18 44r18 48r37 49r13 49r27 50r37
+41i5 size{natural} 44m27 44r27 46r19
+42i5 result{natural} 48m9 48r19 48r28 50m9 50r19 50r28 54r12
+46i9 i{integer} 47r10 48r45 49r21 49r35 50r45
+

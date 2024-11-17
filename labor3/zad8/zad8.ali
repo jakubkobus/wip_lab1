@@ -1,0 +1,107 @@
+V "GNAT Lib v12"
+M P W=b
+P SS ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U zad8%b		zad8.adb		6b5097ac NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system.concat_3%s	s-conca3.adb		s-conca3.ali
+Z system.img_int%s	s-imgint.ads		s-imgint.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20230508121439 76789da1 ada%s
+D a-charac.ads		20230508121439 2d3ec45b ada.characters%s
+D a-chlat1.ads		20230508121439 e0d72e76 ada.characters.latin_1%s
+D a-except.ads		20230508121439 2a7d8d70 ada.exceptions%s
+D a-inteio.ads		20230508121439 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20230508121439 40018c65 ada.io_exceptions%s
+D a-numeri.ads		20230508121439 84bea7a3 ada.numerics%s
+D a-nuelfu.ads		20230508121439 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20230508121439 e6ec3af5 ada.numerics.generic_elementary_functions%s
+D a-stream.ads		20230508121439 119b8fb3 ada.streams%s
+D a-string.ads		20230508121439 90ac6797 ada.strings%s
+D a-strfix.ads		20230508121439 a4e33eef ada.strings.fixed%s
+D a-strmap.ads		20230508121439 233229cd ada.strings.maps%s
+D a-strsea.ads		20230508121439 6f718bb4 ada.strings.search%s
+D a-sttebu.ads		20230508121439 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20230508121439 33c54060 ada.strings.utf_encoding%s
+D a-tags.ads		20230508121439 9eaa38c6 ada.tags%s
+D a-textio.ads		20230508121439 deada98a ada.text_io%s
+D a-tiinio.ads		20230508121439 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20230508121439 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230508121439 edec285f interfaces%s
+D i-cstrea.ads		20230508121439 e53d8b8e interfaces.c_streams%s
+D system.ads		20230508121439 a2da961d system%s
+D s-conca3.ads		20230508121439 9078e860 system.concat_3%s
+D s-crtl.ads		20230508121439 8a0692f8 system.crtl%s
+D s-exctab.ads		20230508121439 91bef6ef system.exception_table%s
+D s-ficobl.ads		20230508121439 dc5161d4 system.file_control_block%s
+D s-imagei.ads		20230508121439 0d3f86a7 system.image_i%s
+D s-imgint.ads		20230508121439 bdb6f5ec system.img_int%s
+D s-parame.ads		20230508121439 d494a4a6 system.parameters%s
+D s-putima.ads		20230508121439 4e095881 system.put_images%s
+D s-secsta.ads		20230508121439 62cd9202 system.secondary_stack%s
+D s-soflin.ads		20230508121439 df77073e system.soft_links%s
+D s-stache.ads		20230508121439 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20230508121439 1c9580f6 system.standard_library%s
+D s-stoele.ads		20230508121439 6d8e1ff4 system.storage_elements%s
+D s-stoele.adb		20230508121439 8f5a9db6 system.storage_elements%b
+D s-traent.ads		20230508121439 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20230508121439 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		20230508121439 d9032363 system.wch_con%s
+D unchconv.ads		20230508121439 ca2f9e18 unchecked_conversion%s
+D zad8.adb		20241030235902 e4bdb471 zad8%b
+G a e
+G c Z b b [zad8 standard 7 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 42|1r6 1r45 2r6 2r45 3r6 3r45 4r6 4r45 47r31
+X 5 a-inteio.ads
+18K13*Integer_Text_IO[19|46] 42|3w10 3r49
+X 7 a-numeri.ads
+16K13*Numerics 35e17 42|4r10 4r49
+X 8 a-nuelfu.ads
+18K22*Elementary_Functions[9|39] 42|4w19 4r58
+X 9 a-ngelfu.ads
+52V13*Sqrt{float} 42|11s30[8|18]
+X 11 a-string.ads
+16K13*Strings 35e16 42|2r10 2r49 47r35
+33n24*Left{33E9} 42|47r43
+X 12 a-strfix.ads
+49K21*Fixed 1397e22 42|2w18 2r57
+1130V13*Trim{string} 42|47s12
+X 18 a-textio.ads
+58K13*Text_IO 727e16 42|1w10 1r49
+464U14*Put 42|52s3
+507U14*Put_Line 42|55s3
+X 19 a-tiinio.ads
+59U14*Get 42|53s3[5|18]
+X 42 zad8.adb
+7U11*Zad8 7b11 56l5 56t9
+8V12 nthPrime{natural} 8b12 8>21 43l7 43t15 55s48
+8i21 n{natural} 14r25 20r8 24r22 42r19
+9V14 iSqrt{natural} 9b14 9>20 12l9 12t14 25s12
+9i20 n{natural} 11r41
+14a5 primes(natural) 22m5 29r25 30r26 35m9 42r12
+15i5 candidate{natural} 25r18 30r12 35r29 39m7 39r20
+16i5 iterator{natural} 24r11 29r48 35r16 36m9 36r21
+17i5 i{natural} 27m7 29r32 29r44 30r33 31m14 31r19
+17i8 s{natural} 25m7 29r38
+18b5 isPrime{boolean} 26m7 29r13 30m45 34r10
+45V12 img{string} 45b12 45>16 48l7 48t10 55s12 55s44
+45i16 number{natural} 47r17
+50i3 n{natural} 53m7 55r16 55r57
+
