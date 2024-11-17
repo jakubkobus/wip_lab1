@@ -1,6 +1,6 @@
 #include "lib.h"
 
-void primeFactors(unsigned *factors, unsigned *size) {
+void primeFactors(unsigned factors[], unsigned *size) {
   unsigned t = 3, n = *size;
   *size = 0;
 
