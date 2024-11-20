@@ -8,7 +8,7 @@ unsigned binomialCoefficient(unsigned n, unsigned k) {
   k = min(k, n - k);
   if(k == 0) return 1;
 
-  unsigned arr[n + 1];
+  unsigned arr[k + 1];
   arr[0] = 1;
 
   for(i = 1; i <= n; i++) {

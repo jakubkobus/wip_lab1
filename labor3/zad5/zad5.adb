@@ -6,7 +6,7 @@ procedure Zad5 is
   function binomialCoefficient(n, k : in Natural) return Natural is
     k_cpy : Natural := Natural'Min(k, n - k);
     min : Natural;
-    arr : array(0 .. n) of Natural;
+    arr : array(0 .. k) of Natural;
   begin
     if k_cpy = 0 then return 1; end if;
 
