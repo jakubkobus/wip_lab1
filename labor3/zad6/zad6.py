@@ -9,11 +9,15 @@ def binomialCoefficient(n: int, k: int) -> int:
         if i <= k:
             min_ = i - 1
             arr[i] = 1
+            print('if  ', *arr, sep=', ');
         else:
             min_ = k
+            print('else', *arr, sep=', ')
         
         for j in range(min_, 0, -1):
             arr[j] += arr[j - 1]
+
+        print('end ', *arr, sep=', ')
     
     return arr[k]
 

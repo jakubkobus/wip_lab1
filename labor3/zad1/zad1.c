@@ -43,8 +43,10 @@ int main()
   unsigned n;
 
   printf("Podaj liczbę: ");
-  if(scanf("%u", &n) != 1)
+  if(scanf("%u", &n) != 1) {
     printf("Dozwolone wartosci w zakresie 2 .. (2^32 - 2)\n");
+    return 1;
+  }
 
   if(n > 1 && n < UINT_MAX) {
     printf("Ilosc liczb pierwszych w zakresie 2 .. %u = %u\n", n, countPrimes(n));
