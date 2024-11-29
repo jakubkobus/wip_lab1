@@ -83,9 +83,7 @@ int main() {
       printf("Unknown command!\n");
   }
 
-  while(!isEmpty(list))
-    pop(list);
-    
+  clean(list);
   free(list);
   return 0;
 }

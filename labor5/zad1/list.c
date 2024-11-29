@@ -69,11 +69,6 @@ int length(List_t *list) {
 }
 
 int get(List_t *list, int index) {
-  if(index < 1 || index > list->length) {
-    printf("[Error] index out of bounds\n");
-    return -1;
-  }
-
   Node *n = list->first;
   for(int i = 1; i < index; i++)
     n = n->next;
@@ -82,11 +77,6 @@ int get(List_t *list, int index) {
 }
 
 void put(List_t *list, int index, int element) {
-  if(index < 1 || index > list->length) {
-    printf("[Error] index out of bounds\n");
-    return;
-  }
-
   Node *n = list->first;
   for(int i = 1; i < index; i++)
     n = n->next;
@@ -95,11 +85,6 @@ void put(List_t *list, int index, int element) {
 }
 
 void insert(List_t *list, int index, int element) {
-  if(index < 1 || index > list->length + 1) {
-    printf("[Error] index out of bounds\n");
-    return;
-  }
-
   Node *n = malloc(sizeof(Node));
   n->element = element;
 
@@ -124,18 +109,13 @@ void insert(List_t *list, int index, int element) {
 }
 
 void delete(List_t *list, int index) {
-  if(index < 1 || index > list->length) {
-    printf("[Error] index out of bounds\n");
-    return;
-  }
-
   if(index == 1) {
     pop(list);
     return;
   }
 
   Node *n = list->first;
-  for(int i = 1; i < index - 1; i = i + 1)
+  for(int i = 1; i < index - 1; i++)
     n = n->next;
 
   Node *tmp = n->next;
