@@ -5,7 +5,7 @@ def myFun(x: float) -> float:
     return cos(x / 2)
 
 def findZero(f: Callable[[float], float], a: float, b: float, eps: float) -> float:
-    mid: float = 0.0
+    mid = 0.0
 
     while (b - a) / 2 > eps:
         mid = (a + b) / 2
