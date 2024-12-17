@@ -22,29 +22,28 @@ bool nextPermutation(int *arr, int n, int min, int max) {
 }
 
 bool isValid(int *arr, int n) {
-  int *rows = (int *)calloc(n + 1, sizeof(int));
-  int *diag1 = (int *)calloc(2 * n, sizeof(int));
-  int *diag2 = (int *)calloc(2 * n, sizeof(int));
+  int *row   = (int *)calloc(n + 1, sizeof(int));
+  int *dgnl1 = (int *)calloc(2 * n, sizeof(int));
+  int *dgnl2 = (int *)calloc(2 * n, sizeof(int));
 
-  if(rows == NULL || diag1 == NULL || diag2 == NULL) {
+  if(row == NULL || dgnl1 == NULL || dgnl2 == NULL) {
     perror("Memory allocation error");
-    free(rows);
-    free(diag1);
-    free(diag2);
+    free(row);
+    free(dgnl1);
+    free(dgnl2);
     return false;
   }
 
-  bool valid = true;
-  for(int i = 0; i < n && valid; i++) 
-    if(++rows[arr[i]] > 1 || 
-       ++diag1[i - arr[i] + n] > 1 || 
-       ++diag2[i + arr[i]] > 1) 
-      valid = false;
+  for(int i = 0; i < n; i++) 
+    if(++row[arr[i]]           > 1 || 
+       ++dgnl1[i - arr[i] + n] > 1 || 
+       ++dgnl2[i + arr[i]]     > 1)
+      return false;
 
-  free(rows);
-  free(diag1);
-  free(diag2);
-  return valid;
+  free(row);
+  free(dgnl1);
+  free(dgnl2);
+  return true;
 }
 
 int main(int argc, char *argv[]) { 

@@ -11,25 +11,27 @@ def nextPermutation(lst: List[int], min_: int, max_: int) -> bool:
     return False
 
 def isValid(lst: List[int]) -> bool:
-    rows  = [0] * (len(lst) + 1)
-    diag1 = [0] * (2 * len(lst))
-    diag2 = [0] * (2 * len(lst))
+    row   = [0] * (len(lst) + 1)
+    dgnl1 = [0] * (2 * len(lst))
+    dgnl2 = [0] * (2 * len(lst))
     
-    valid = True
     for i in range(len(lst)):
-        rows[lst[i]] += 1
-        diag1[i - lst[i] + len(lst)] += 1
-        diag2[i + lst[i]] += 1
+        row[lst[i]] += 1
+        dgnl1[i - lst[i] + len(lst)] += 1
+        dgnl2[i + lst[i]] += 1
         
-        if rows[lst[i]] > 1 or \
-           diag1[i - lst[i] + len(lst)] > 1 or \
-           diag2[i + lst[i]] > 1:
-            valid = False
-            break
+        if row[lst[i]] > 1 or \
+           dgnl1[i - lst[i] + len(lst)] > 1 or \
+           dgnl2[i + lst[i]] > 1:
+            return False
     
-    return valid
+    return True
 
 def main() -> None:
+    if len(sys.argv) != 2:
+        print("Unknown usage")
+        return
+    
     n = int(sys.argv[1])
     lst = [1] * n
 
