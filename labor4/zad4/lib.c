@@ -30,11 +30,9 @@ unsigned totient(unsigned n) {
   unsigned factors[(int)log2(n)], size = n;
   primeFactors(factors, &size);
 
-  unsigned result = n;
-  for(unsigned i = 0; i < size; i++) {
-    if(i == 0)
-      result -= result / factors[i];
-    else if(factors[i] != factors[i - 1])
+  unsigned result = n - (n / factors[0]);
+  for(unsigned i = 1; i < size; i++) {
+    if(factors[i] != factors[i - 1])
       result -= result / factors[i];
   }
 
