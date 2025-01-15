@@ -12,21 +12,21 @@ typedef struct {
 
 CompareResult compare(int *correct, int *guess) {
   int hits = 0, misplaced = 0;
-  int remaining_pin[GUESS_SIZE], remaining_guess[GUESS_SIZE];
+  int correctLeft[GUESS_SIZE], guessLeft[GUESS_SIZE];
   int used[GUESS_SIZE] = { 0 };
-  int remaining_count = 0;
+  int countLeft = 0;
 
   for(int i = 0; i < GUESS_SIZE; i++)
     if(correct[i] == guess[i])
       hits++;
     else {
-      remaining_pin[remaining_count] = correct[i];
-      remaining_guess[remaining_count++] = guess[i];
+      correctLeft[countLeft] = correct[i];
+      guessLeft[countLeft++] = guess[i];
     }
 
-  for(int i = 0; i < remaining_count; i++)
-    for(int j = 0; j < remaining_count; j++)
-      if(!used[j] && remaining_guess[i] == remaining_pin[j]) {
+  for(int i = 0; i < countLeft; i++)
+    for(int j = 0; j < countLeft; j++)
+      if(!used[j] && guessLeft[i] == correctLeft[j]) {
         misplaced++;
         used[j] = 1;
         break;
@@ -69,7 +69,7 @@ int main() {
 
   generateAllCombinations(&allCombinations, &totalCombinations);
 
-  for (int i = 0; i < GUESS_SIZE; i++)
+  for(int i = 0; i < GUESS_SIZE; i++)
     guess[i] = GUESS_MIN;
 
   while(hits != GUESS_SIZE) {

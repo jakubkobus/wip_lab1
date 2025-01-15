@@ -33,7 +33,7 @@ void HETMAN(int n) {
   bool *bije_przek1 = (bool *)calloc(2 * n, sizeof(bool));
   bool *bije_przek2 = (bool *)calloc(2 * n, sizeof(bool));
 
-  if(position == NULL    || bije_wiersz == NULL || 
+  if(position == NULL || bije_wiersz == NULL || 
      bije_przek1 == NULL || bije_przek2 == NULL) {
     perror("Memory allocation error");
     free(position);

@@ -11,7 +11,7 @@ def nextPermutation(lst: List[int], min_: int, max_: int) -> bool:
     return False
 
 def isValid(lst: List[int]) -> bool:
-    row   = [0] * (len(lst) + 1)
+    row   = [0] * (1 + len(lst))
     dgnl1 = [0] * (2 * len(lst))
     dgnl2 = [0] * (2 * len(lst))
     

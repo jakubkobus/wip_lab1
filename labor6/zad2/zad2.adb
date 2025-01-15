@@ -30,8 +30,8 @@ procedure Zad2 is
   end nextPermutation;
 
   function isValid(arr : PrmtArr_ptr; n : Integer) return Boolean is
-      row   : array(0 .. N) of Natural     := (others => 0);
-      dgnl1 : array(-N .. N) of Natural    := (others => 0);
+      row   : array(0 .. N) of Natural := (others => 0);
+      dgnl1 : array(-N .. N) of Natural := (others => 0);
       dgnl2 : array(0 .. 2 * N) of Natural := (others => 0);
    begin
       for i in 0 .. n - 1 loop

@@ -1,40 +1,45 @@
 from typing import List, Tuple
 
+GUESS_SIZE = 4
+GUESS_MIN = 1
+GUESS_MAX = 6
+
 def compare(correct: List[int], guess: List[int]) -> Tuple[int, int]:
-  hits = 0
-  misplaced = 0
+  hits, misplaced = 0, 0
+  correctLeft, guessLeft = [], []
+  used = [0] * GUESS_SIZE
+  countLeft = 0
 
-  remaining_pin = []
-  remaining_guess = []
-
-  for p, g in zip(correct, guess):
-    if p == g:
+  for i in range(GUESS_SIZE):
+    if correct[i] == guess[i]:
       hits += 1
     else:
-      remaining_pin.append(p)
-      remaining_guess.append(g)
-
-  for g in remaining_guess:
-    if g in remaining_pin:
-      misplaced += 1
-      remaining_pin.remove(g)
-
+      correctLeft.append(correct[i])
+      guessLeft.append(guess[i])
+      countLeft += 1
+  
+  for i in range(countLeft):
+    for j in range(countLeft):
+      if not used[j] and guessLeft[i] == correctLeft[j]:
+        misplaced += 1
+        used[j] = 1
+        break
+  
   return (hits, misplaced)
 
-def main():
-    min_, max_ = 1, 6
-    guess = [min_] * 4
-    
+def main(): 
     combinations = [
-        [a, b, c, d]
-        for a in range(min_, max_ + 1)
-        for b in range(min_, max_ + 1)
-        for c in range(min_, max_ + 1)
-        for d in range(min_, max_ + 1)
+        [i, j, k, l]
+        for i in range(GUESS_MIN, GUESS_MAX + 1)
+        for j in range(GUESS_MIN, GUESS_MAX + 1)
+        for k in range(GUESS_MIN, GUESS_MAX + 1)
+        for l in range(GUESS_MIN, GUESS_MAX + 1)
     ]
-
+    
+    guess = [GUESS_MIN] * GUESS_SIZE
     hits = 0
     attempt = 0
+    
     while hits != 4:
         attempt += 1
         print(f"{attempt}: {' '.join(map(str, guess))} ?")
@@ -43,8 +48,8 @@ def main():
         misplaced = int(input("Nie na swoim miejscu: "))
         
         combinations = [
-            c for c in combinations
-            if compare(c, guess) == (hits, misplaced)
+            comb for comb in combinations
+            if compare(comb, guess) == (hits, misplaced)
         ]
         
         if len(combinations) > 0:
