@@ -1,71 +1,84 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <limits.h>
+#include <stdbool.h>
 
-int getFirstLine(const char *filename) {
-  FILE *f = fopen(filename, "r");
-  if(f == NULL) {
-    perror("File does not exist");
-    return INT_MAX;
-  }
-  
-  int res;
-  if(fscanf(f, "%d", &res) == 1) {
-    fclose(f);
-    return res;
-  }
-  
-  fclose(f);
-  return INT_MAX;
-}
+int *getCoins(const char *filename, int *amount) {
+  FILE *file = fopen(filename, "r");
 
-void readFileToArray(const char *filename, int *array) {
-  FILE *f = fopen(filename, "r");
-  if(f == NULL) {
-    perror("File does not exist");
-    return;
+  if(file == NULL) {
+    fprintf(stderr, "File '%s' does not exist\n", filename);
+    return NULL;
   }
+
+  fscanf(file, "%d", amount);
+  int *coins = malloc(*amount * sizeof(int));
 
   int i = 0;
-  int flag = 0;
-  while(fscanf(f, "%d", &array[i]) == 1)
-    if(flag) i++;
-    else flag = 1;
+  while(fscanf(file, "%d", &coins[i++]) == 1);
+  fclose(file);
+
+  return coins;
 }
 
-void change(int *coins, int n, int r) {
+void solveChangeProblem(int *coins, int n, int r) {
   int *C = malloc((r + 1) * sizeof(int));
   int *D = malloc((r + 1) * sizeof(int));
 
+  if(C == NULL || D == NULL) {
+    fprintf(stderr, "Memory allocation error\n");
+    return;
+  }
+
   for(int i = 0; i <= r; i++) {
-    C[i] = -1;
+    C[i] = INT_MAX;
     D[i] = -1;
   } C[0] = 0;
 
-  for(int i = 1; i <= r; i++)
-    for(int j = 0; j < n; j++)
-      if(coins[j] >= i && C[i - coins[j]] != -1) {
-        if(C[i] > C[i - coins[j]] + 1)
-          C[i] = C[i - coins[j]] + 1;
-        if(C[i] != -1)
-          D[i] = coins[j];
+  for(int i = 1; i <= r; i++) {
+    for(int j = 0; j < n; j++) {
+      if(coins[j] <= i && 
+         C[i - coins[j]] != INT_MAX &&
+         C[i] > C[i - coins[j]] + 1) {
+          
+        C[i] = C[i - coins[j]] + 1;
+        D[i] = coins[j];
       }
-      
-  if(C[r] == -1) {
+    }
+  }
+
+  if(C[r] == INT_MAX) {
     printf("%d ==> No solution!\n", r);
   } else {
     printf("%d ==> %d\n", r, C[r]);
-    int *res = calloc(n, sizeof(int));
-    int left = r, idx;
-    while(left > 0) {
-      idx = D[left];
-      res[idx]++;
-      left -= coins[idx];
+    int *result = calloc(n, sizeof(int));
+    
+    if(result == NULL) {
+      printf("Memory allocation error\n");
+      return;
     }
+
+    bool found;
+
+    while(r > 0) {
+      found = false;
+
+      for(int i = 0; i < n || !found; i++) {
+        if(coins[i] == D[r]) {
+          result[i]++;
+          found = true;
+        }
+      }
+
+      r -= D[r];
+    }
+
     for(int i = 0; i < n; i++)
-      if(res[i] > 0)
-        printf("\t%d x %d\n", coins[i], res[i]);
-    free(res);
+      if(result[i] > 0)
+        printf("\t%d x %d\n", result[i], coins[i]);
+
+    free(result);
   }
 
   free(C);
@@ -73,16 +86,24 @@ void change(int *coins, int n, int r) {
 }
 
 int main(int argc, char *argv[]) {
-  const char *filename = argv[1];
+  if(argc < 3) {
+    fprintf(stderr, "Unknown usage: <filename:str> <amount:int> ... <amount:int>\n");
+    return 1;
+  }
   
-  int coinsCount = getFirstLine(filename);
-  int coins[coinsCount];
-  readFileToArray(filename, coins);
-  
-  int inputCount = argc - 2;
-  int r[inputCount];
-  for(int i = 2; i < inputCount + 2; i++)
-    change(coins, coinsCount, atoi(argv[i]));
+  int amount;
+  int *coins = getCoins(argv[1], &amount);
 
+  if(coins == NULL)
+    return 1;
+
+  for(int i = 2; i < argc; i++) {
+    if(isdigit(*argv[i]))
+      solveChangeProblem(coins, amount, atoi(argv[i]));
+    else
+      fprintf(stderr, "'%s' is not an integer\n", argv[i]);
+  }
+
+  free(coins);
   return 0;
 }
